@@ -29,30 +29,34 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    brooklyn_99_quotes = [
-        'I\'m the human form of the 💯 emoji.',
-        'Bingpot!',
-        (
-            'Cool. Cool cool cool cool cool cool cool, '
-            'no doubt no doubt no doubt no doubt.'
-        ),
+   # voice lines from video game Escape from Tarkov
+
+   # scav voicelines
+    scav = [
+        'Cheeki Breeki bansku hiki!',
+        'Von on Cyka!',
+        'Opachki',
+        'Kepka'
     ]
 
-    hitchhiker_quotes = [
-        'There is an art, it says, or rather, a knack to flying. The knack lies in learning how to throw yourself at the ground and miss.',
-        'It is a mistake to think you can solve any major problems just with potatoes.',
-        'In the beginning the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.',
-        'A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.',
+    # usec voicelines
+    usec = [
+        'Goddamn ruskies',
+        'Damn Ivans',
+        'Okay we got BEARS, now we have god damn scavs',
+        'Just die already!',
+        'Fuckin scav',
+        'I hear a rat'
     ]
 
-    if message.content == 'towel!':
-       #response = random.choice(brooklyn_99_quotes)
-        response = random.choice(hitchhiker_quotes)
+    if message.content == 'scav!':
+        response = random.choice(scav)
         await message.channel.send(response)
-    elif message.content == '99!':
-        response = random.choice(brooklyn_99_quotes)
+    elif message.content == 'usec!':
+        response = random.choice(usec)
         await message.channel.send(response)
     elif message.content == 'onion!':
+       # picture of spider man enjoying a delicous onion ring
         response = 'https://i.redd.it/4g4r7ks7f0531.jpg'
         await message.channel.send(response)
 
