@@ -2,6 +2,7 @@
 1.
 AMI = Ubtuntu LTS x86_64
 DefaultName = i-0b0f35877c6d188fe
+InstanceType= t2.micro
 2. Select the instance, click actions  and connect VPC
 3. Assuming you are going to use an elastic ip, you should not auto assign a public ipv4. The public address is going to be replaced by the elastic ip.
 4. Select the "Volumes" subtab in "Elastic Block Store" subtab and choose the instance.
