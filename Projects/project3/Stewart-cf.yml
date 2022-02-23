@@ -104,7 +104,7 @@ Resources:
         - IpProtocol: tcp
           FromPort: '1'
           ToPort: '65535'
-          CidrIp: 0.0.0.0/0 # Exact home ip
+          CidrIp: 24.166.16.163 # Exact home ip
   PublicUbuntuInstance:
     Type: 'AWS::EC2::Instance'
     DependsOn: AttachGateway
