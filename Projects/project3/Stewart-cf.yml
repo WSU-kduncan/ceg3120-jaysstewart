@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: Duncan CF Template to create a VPC, allow SSH access from trusted networks, and create a single instance with an Elastic IP address
-  Testing area for AWS: This template builds a linux VM for CEG 2350 @ WSU.
+Testing area for AWS: This template builds a linux VM for CEG 2350 @ WSU.
 Parameters:
   KeyName:
     Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
@@ -42,7 +42,7 @@ Resources:
         - Key: Application
           Value: !Ref 'AWS::StackId'
         - Key: Name
-          Value: Stewart-CF-Subnet
+          Value: 'Stewart-CF-Subnet'
   InternetGateway:
     Type: 'AWS::EC2::InternetGateway'
     Properties:
@@ -100,7 +100,7 @@ Resources:
         - IpProtocol: tcp
           FromPort: '22'
           ToPort: '22'
-          CidrIp: 24.166.16.163/32
+          CidrIp: 24.166.16.163/32 # Home CIDR
         - IpProtocol: -1
           FromPort: '-1'
           ToPort: '-1'
@@ -108,7 +108,7 @@ Resources:
         - IpProtocol: tcp
           FromPort: '1'
           ToPort: '65535'
-          CidrIp:  0.0.0.0/0
+          CidrIp:  10.0.0.0/24
   PublicUbuntuInstance:
     Type: 'AWS::EC2::Instance'
     DependsOn: AttachGateway
